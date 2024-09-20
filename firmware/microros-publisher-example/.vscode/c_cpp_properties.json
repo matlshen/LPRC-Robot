@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Arduino",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/mshen/Documents/Arduino/libraries/**",
+                "/Users/mshen/Library/Arduino15/libraries/**"
+                "/Users/mshen/Library/Arduino15/packages/**"
+            ],
+            "defines": [
+                "ARDUINO=10805",
+                "ESP_32"
+            ],
+            "compilerPath": "/path/to/Arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/bin/avr-g++",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
