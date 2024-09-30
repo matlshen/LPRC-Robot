@@ -35,6 +35,27 @@ int configure_serial(const char *serial_port, int baud_rate) {
     }
 
     // Set baud rate
+    switch (baud_rate) {
+        case 9600:
+            baud_rate = B9600;
+            break;
+        case 19200:
+            baud_rate = B19200;
+            break;
+        case 38400:
+            baud_rate = B38400;
+            break;
+        case 57600:
+            baud_rate = B57600;
+            break;
+        case 115200:
+            baud_rate = B115200;
+            break;
+        default:
+            fprintf(stderr, "Unsupported baud rate\n");
+            close(fd);
+            exit(EXIT_FAILURE);
+    }
     cfsetispeed(&options, baud_rate);
     cfsetospeed(&options, baud_rate);
 
