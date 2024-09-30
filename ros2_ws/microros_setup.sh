@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # TCP to Serial
-socat PTY,link=/dev/ttyV0,raw,echo=0,b115200 TCP:host.docker.internal:9999 &
+socat PTY,link=/dev/ttyV0,raw,echo=0,b115200 TCP:localhost:9999 &
 
 # Serial to TCP
 socat TCP-LISTEN:9999,reuseaddr,fork PTY,link=/dev/ttyV0,raw,echo=0,b115200 &
