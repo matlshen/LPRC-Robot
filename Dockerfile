@@ -40,7 +40,7 @@ RUN /bin/bash -c "source /opt/ros/humble/setup.bash && \
 RUN echo "source ~/microros_ws/install/local_setup.bash" >> /root/.bashrc
 
 # Add microros startup configuration script
-COPY workspace/ /root/workspace/
+COPY ros2_ws/ /root/workspace/
 RUN chmod +x /root/workspace/microros_setup.sh
 
 # Expose ports
