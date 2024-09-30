@@ -89,9 +89,9 @@ void *serial_thread(void *arg) {
     unsigned char buffer[1024];
     while (1) {
         ssize_t n = read(serial_fd, buffer, sizeof(buffer));
-        // Print contents of buffer
+        // Print contents of buffer characters
         for (int i = 0; i < n; i++) {
-            printf("%02X ", buffer[i]);
+            printf("%c", buffer[i]);
         }
         if (n > 0) {
             pthread_mutex_lock(&fd_mutex);
