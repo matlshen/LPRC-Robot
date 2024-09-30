@@ -187,7 +187,7 @@ int main(int argc, char *argv[]) {
     server_addr.sin_port = htons(tcp_port);
 
     int opt = 1;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt)) < 0) {
         perror("setsockopt(SO_REUSEADDR) failed");
         close(serial_fd);
         close(sockfd);
